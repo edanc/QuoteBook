@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -12,20 +13,15 @@ import java.util.ArrayList;
 
 
 public class QuoteActionsActivity extends Activity {
-    @Override
+   public int count = 0;
+   public ArrayList<Quote> quoteList = new ArrayList<Quote>();
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quote_actions);
 
-        RelativeLayout touch = (RelativeLayout) findViewById(R.id.touch);
-        Button btn = (Button) findViewById(R.id.button);
-        Button btn2 = (Button) findViewById(R.id.button2);
-        Button btn3 = (Button) findViewById(R.id.button3);
-        Button btn4 = (Button) findViewById(R.id.button4);
-        Button btn5 = (Button) findViewById(R.id.button5);
-        Button btn6 = (Button) findViewById(R.id.button6);
-
-        final ArrayList<Quote> quoteList = new ArrayList<Quote>();
+        RelativeLayout touch = (RelativeLayout) findViewById(R.id.game);
+        setupButtons();
 
         Quote quote1 = new Quote("Cool Beans", "Rod Kimble");
         quoteList.add(quote1);
@@ -46,7 +42,7 @@ public class QuoteActionsActivity extends Activity {
             @Override
             public void onClick(View view) {
 
-                if (count < quoteList.size()) {
+                if (count < 2) {
 
                     Quote q = quoteList.get(count);
 
@@ -63,6 +59,37 @@ public class QuoteActionsActivity extends Activity {
             }
         });
         */
+    }
+
+    public  void  setupButtons(){
+        final Button btn = (Button) findViewById(R.id.button);
+        btn.setText("???");
+        final Button btn2 = (Button) findViewById(R.id.button2);
+        btn2.setText("???");
+        final Button btn3 = (Button) findViewById(R.id.button3);
+        btn3.setText("???");
+        final Button btn4 = (Button) findViewById(R.id.button4);
+        btn4.setText("???");
+        final Button btn5 = (Button) findViewById(R.id.button5);
+        btn5.setText("???");
+        final Button btn6 = (Button) findViewById(R.id.button6);
+        btn6.setText("???");
+    }
+
+    public void checkCount(int count){
+        count++;
+        if (count == 2){
+            count =0;
+        }
+    }
+
+    public void sendMessage(View view) {
+        if (count != 2){
+           Button b = (Button) findViewById(view.getId());
+            Quote q = quoteList.get(count);
+            b.setText(q.getQuote());
+            checkCount(count);
+        }
     }
 
     @Override
