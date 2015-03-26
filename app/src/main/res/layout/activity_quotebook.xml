@@ -10,28 +10,15 @@
     android:id="@+id/touch">
 
     <TextView
-        android:text="Tap the screen to begin "
-        android:id="@+id/quote"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
+        android:text="Tap here to begin"
         android:textSize="26sp"
-        android:layout_gravity="center"
-        android:layout_above="@+id/person"
-        android:textColor="#ffdbdbdb"
+        android:id="@+id/textView"
+        android:layout_marginTop="166dp"
+        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-medium"
-        android:textSize="26sp"
-        android:gravity="end"
-        android:textColor="#ffa5a5a5"
-        android:layout_gravity="center"
-        android:id="@+id/person"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/quote"
-        android:layout_alignStart="@+id/quote" />
 </RelativeLayout>

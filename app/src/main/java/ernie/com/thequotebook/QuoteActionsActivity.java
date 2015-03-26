@@ -1,33 +1,31 @@
 package ernie.com.thequotebook;
 
 import android.app.Activity;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
+import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
 
-public class QuoteBook extends Activity {
-
-    int count = 0;
+public class QuoteActionsActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_quote_actions);
 
-        setContentView(R.layout.activity_quotebook);
         RelativeLayout touch = (RelativeLayout) findViewById(R.id.touch);
-        final TextView quoteText = (TextView) findViewById(R.id.quote);
-        final TextView personText = (TextView) findViewById(R.id.person);
+        Button btn = (Button) findViewById(R.id.button);
+        Button btn2 = (Button) findViewById(R.id.button2);
+        Button btn3 = (Button) findViewById(R.id.button3);
+        Button btn4 = (Button) findViewById(R.id.button4);
+        Button btn5 = (Button) findViewById(R.id.button5);
+        Button btn6 = (Button) findViewById(R.id.button6);
 
         final ArrayList<Quote> quoteList = new ArrayList<Quote>();
-
-        Quote quote4 = new Quote("You're more of a fun vampire. You don't suck blood, you just suck.", "Troy Barnes");
-        quoteList.add(quote4);
 
         Quote quote1 = new Quote("Cool Beans", "Rod Kimble");
         quoteList.add(quote1);
@@ -38,12 +36,12 @@ public class QuoteBook extends Activity {
         Quote quote3 = new Quote("That's like me blaming owls for how bad I suck at analogies.", "Britta Perry");
         quoteList.add(quote3);
 
+        Quote quote4 = new Quote("You're more of a fun vampire. You don't suck blood, you just suck.", "Troy Barnes");
+        quoteList.add(quote4);
+
         Quote quote5 = new Quote("I was gonna be the first person in my family to graduate from community college. Everyone else graduated from normal college", "Troy Barnes");
         quoteList.add(quote5);
-
-        //Add more quotes here
-
-
+/*
         touch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,19 +58,17 @@ public class QuoteBook extends Activity {
 
 
                 } else{
-
                     count = 0;
-
                 }
             }
         });
+        */
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_quote_book, menu);
+        getMenuInflater().inflate(R.menu.menu_qutoe_actions, menu);
         return true;
     }
 
