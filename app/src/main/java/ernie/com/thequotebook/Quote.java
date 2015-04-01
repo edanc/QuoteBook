@@ -5,9 +5,11 @@ package ernie.com.thequotebook;
 public class Quote {
     public String quote;
     public String person;
+    public Boolean found;
 
-    public Quote(String mQuote, String mPerson){
+    public Quote(String mQuote, String mPerson, Boolean mFound){
         super();
+        found= mFound;
         quote = mQuote;
         person = mPerson;
     }

@@ -22,21 +22,7 @@ public class QuoteActionsActivity extends Activity {
 
         RelativeLayout touch = (RelativeLayout) findViewById(R.id.game);
         setupButtons();
-
-        Quote quote1 = new Quote("Cool Beans", "Rod Kimble");
-        quoteList.add(quote1);
-
-        Quote quote2 = new Quote("How can mirrors be real if our eyes aren't real", "Jaden Smith");
-        quoteList.add(quote2);
-
-        Quote quote3 = new Quote("That's like me blaming owls for how bad I suck at analogies.", "Britta Perry");
-        quoteList.add(quote3);
-
-        Quote quote4 = new Quote("You're more of a fun vampire. You don't suck blood, you just suck.", "Troy Barnes");
-        quoteList.add(quote4);
-
-        Quote quote5 = new Quote("I was gonna be the first person in my family to graduate from community college. Everyone else graduated from normal college", "Troy Barnes");
-        quoteList.add(quote5);
+        createQuotes();
 /*
         touch.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +47,22 @@ public class QuoteActionsActivity extends Activity {
         */
     }
 
+    public void  createQuotes(){
+       Quote quote1 = new Quote("Cool Beans", "Rod Kimble", false);
+        quoteList.add(quote1);
+
+        Quote quote2 = new Quote("How can mirrors be real if our eyes aren't real", "Jaden Smith", false);
+        quoteList.add(quote2);
+
+         Quote quote3 = new Quote("That's like me blaming owls for how bad I suck at analogies.", "Britta Perry", false);
+        quoteList.add(quote3);
+
+        Quote quote4 = new Quote("You're more of a fun vampire. You don't suck blood, you just suck.", "Troy Barnes", false);
+        quoteList.add(quote4);
+
+        Quote quote5 = new Quote("I was gonna be the first person in my family to graduate from community college. Everyone else graduated from normal college", "Troy Barnes", false);
+        quoteList.add(quote5);
+    }
     public  void  setupButtons(){
         final Button btn = (Button) findViewById(R.id.button);
         btn.setText("???");
@@ -86,9 +88,9 @@ public class QuoteActionsActivity extends Activity {
     public void sendMessage(View view) {
         if (count != 2){
            Button b = (Button) findViewById(view.getId());
-            Quote q = quoteList.get(count);
-            b.setText(q.getQuote());
-            checkCount(count);
+           Quote q = quoteList.get(count);
+           b.setText(q.getQuote());
+           checkCount(count);
         }
     }
 
